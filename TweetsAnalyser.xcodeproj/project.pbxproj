@@ -12,6 +12,7 @@
 		0D58CDC222C8B95800EAF7E4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D58CDC022C8B95700EAF7E4 /* Main.storyboard */; };
 		0D58CDC422C8BB2A00EAF7E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D58CDC322C8BB2A00EAF7E4 /* Assets.xcassets */; };
 		0D58CDC722C8BB2A00EAF7E4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D58CDC522C8BB2A00EAF7E4 /* LaunchScreen.storyboard */; };
+		0DE5013F22C9B050008A4A39 /* TweetSentimentClassifier.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 0DE5013E22C9B050008A4A39 /* TweetSentimentClassifier.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		0D58CDC322C8BB2A00EAF7E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D58CDC622C8BB2A00EAF7E4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0D58CDC822C8BB2A00EAF7E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DE5013E22C9B050008A4A39 /* TweetSentimentClassifier.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = TweetSentimentClassifier.mlmodel; path = OtherFiles/TweetSentimentClassifier.mlmodel; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				0D58CDC322C8BB2A00EAF7E4 /* Assets.xcassets */,
 				0D58CDC522C8BB2A00EAF7E4 /* LaunchScreen.storyboard */,
 				0D58CDC822C8BB2A00EAF7E4 /* Info.plist */,
+				0DE5013E22C9B050008A4A39 /* TweetSentimentClassifier.mlmodel */,
 			);
 			path = TweetsAnalyser;
 			sourceTree = "<group>";
@@ -135,6 +138,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DE5013F22C9B050008A4A39 /* TweetSentimentClassifier.mlmodel in Sources */,
 				0D58CDBF22C8B95600EAF7E4 /* ViewController.swift in Sources */,
 				0D58CDBD22C8B95600EAF7E4 /* AppDelegate.swift in Sources */,
 			);
