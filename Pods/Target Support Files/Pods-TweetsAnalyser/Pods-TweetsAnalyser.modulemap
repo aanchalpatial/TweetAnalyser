@@ -1,0 +1,6 @@
+framework module Pods_TweetsAnalyser {
+  umbrella header "Pods-TweetsAnalyser-umbrella.h"
+
+  export *
+  module * { export * }
+}
