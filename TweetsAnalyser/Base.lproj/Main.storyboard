@@ -28,11 +28,9 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zXJ-eZ-cs2">
                                 <rect key="frame" x="93" y="473" width="134" height="37"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.0" green="0.32852089410000002" blue="0.57488495110000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="26"/>
-                                <state key="normal" title="Analyse">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
+                                <state key="normal" title="Analyse"/>
                                 <connections>
                                     <action selector="analyseButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2yL-0c-lFi"/>
                                 </connections>
@@ -50,11 +48,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.15294117647058825" green="0.6470588235294118" blue="0.85882352941176465" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.1529411765" green="0.66666666666666663" blue="0.85882352939999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="eF3-Ic-Wk7"/>
                     <connections>
+                        <outlet property="analyseButton" destination="zXJ-eZ-cs2" id="Cp2-T4-ahA"/>
                         <outlet property="emojiLabel" destination="iOE-Xm-Rtz" id="l4H-aa-osM"/>
                         <outlet property="textField" destination="d1G-42-1r5" id="Dxu-ny-sEm"/>
                     </connections>
