@@ -8,6 +8,8 @@
 
 import UIKit
 import SwifteriOS
+import SwiftyJSON
+import CoreML
 
 class ViewController: UIViewController {
 
@@ -18,13 +20,25 @@ class ViewController: UIViewController {
     // Instantiation using Twitter's OAuth Consumer Key and secret
     let swifter = Swifter(consumerKey: "AoaMzhn4B4VcCVphkCGu3VrB7", consumerSecret: "LY3pZQDiq7GBBOgecA9qNR1ZisVWj81meTZGDReuhQRg9ngYx9")
     
+    let sentimentClassifier = TweetSentimentClassifier()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
         swifter.searchTweet(using: "@Apple", lang: "en", count: 100, tweetMode : .extended, success: { (results, metadata) in
-            print(results)
+            
+            //JSON Parsing
+            var tweetArray = [String]()
+            for i in 0..<100 {
+                if let tweet = results[i]["full_text"].string{
+                    tweetArray.append(tweet)
+                }
+            }
+            
+            
+            
         }) { (error) in
             print("Error with Twitter API requets \(error)")
         }
