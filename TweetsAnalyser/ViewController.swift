@@ -11,10 +11,11 @@ import SwifteriOS
 import SwiftyJSON
 import CoreML
 
-class ViewController: UIViewController {
+class ViewController: UIViewController , UITextFieldDelegate{
     
     //MARK: Variables
 
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var emojiLabel: UILabel!
     @IBOutlet weak var analyseButton: UIButton!
@@ -30,6 +31,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         analyseButton.layer.cornerRadius = 7
         analyseButton.clipsToBounds = true
+        textField.delegate = self
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(viewTapped))
+        view.addGestureRecognizer(tapGesture)
         
     }
 
@@ -63,12 +67,13 @@ class ViewController: UIViewController {
         do{
             let predictions = try self.sentimentClassifier.predictions(inputs: tweetArray)
             var score : Int = 0
-            for i in 0..<100 {
-                if predictions[i].label == "Pos" {
+            for pred in predictions {
+                let sentiment = pred.label
+                if sentiment == "Pos" {
                     score += 1
-                }else if predictions[i].label == "Neg" {
+                }else if sentiment == "Neg" {
                     score -= 1
-                }else if predictions[i].label == "Nuetral"{
+                }else if sentiment == "Neutral"{
                     //do nothing
                 }
             }
@@ -90,6 +95,25 @@ class ViewController: UIViewController {
             emojiLabel.text = "😟"
         }else if score < -10 {
             emojiLabel.text = "😖"
+        }
+    }
+    
+    @objc func viewTapped() {
+        textField.endEditing(true)
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        
+        UIView.animate(withDuration: 0.2) {
+            self.heightConstraint.constant = 258
+            self.view.layoutIfNeeded()
+        }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        UIView.animate(withDuration: 0.2) {
+            self.heightConstraint.constant = 144
+            self.view.layoutIfNeeded()
         }
     }
 }
