@@ -17,6 +17,12 @@ For more info on CoreML visit : https://developer.apple.com/machine-learning/cor
 
 **Functionality:** 
 
+<p float="left">
+  <img src="https://i.imgur.com/QDYRbWS.png"  />
+  <img src="https://i.imgur.com/bKQXrlT.png"  /> 
+  <img src="https://i.imgur.com/ceFT5mt.png"  />
+</p>
+
 When user enters a handle name, app requests twitter api (https://developer.twitter.com/en/docs/tweets/search/api-reference/get-search-tweets.html) to provide 100 latest tweets for that handle which are in english language. App uses Swifter framework for making api requests (https://github.com/mattdonnelly/Swifter).Then SwiftyJSON cocoapod (http://cocoapods.org/pods/SwiftyJSON) is used to parse JSON result and then feed an array of 100 tweets to our self-trained machine learning model.                
 
 Result parameters:  
